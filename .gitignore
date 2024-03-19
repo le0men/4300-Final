@@ -17,3 +17,7 @@ dist/
 build/
 *.egg-info/
 helpers/*
+
+appiphany/
+_build
+.env
