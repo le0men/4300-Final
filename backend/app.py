@@ -3,18 +3,22 @@ import os
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from helpers.MySQLDatabaseHandler import MySQLDatabaseHandler
+from dotenv import load_dotenv
 
 # ROOT_PATH for linking with all your files. 
 # Feel free to use a config.py or settings.py with a global export variable
 os.environ['ROOT_PATH'] = os.path.abspath(os.path.join("..",os.curdir))
 
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
 # These are the DB credentials for your OWN MySQL
 # Don't worry about the deployment credentials, those are fixed
 # You can use a different DB name if you want to
-LOCAL_MYSQL_USER = "root"
-LOCAL_MYSQL_USER_PASSWORD = "admin"
-LOCAL_MYSQL_PORT = 3306
-LOCAL_MYSQL_DATABASE = "kardashiandb"
+LOCAL_MYSQL_USER = os.getenv('DB_USER', 'root')
+LOCAL_MYSQL_USER_PASSWORD = os.getenv('DB_PASSWORD', 'admin')
+LOCAL_MYSQL_PORT = os.getenv('DB_PORT', 3306)
+LOCAL_MYSQL_DATABASE = os.getenv('DB_NAME', "appiphany")
 
 mysql_engine = MySQLDatabaseHandler(LOCAL_MYSQL_USER,LOCAL_MYSQL_USER_PASSWORD,LOCAL_MYSQL_PORT,LOCAL_MYSQL_DATABASE)
 
