@@ -8,7 +8,8 @@
 - [Uploading Large Files](#uploading-large-files)
 - [MySQL functionality](#mysql-functionality)
 - [Debugging Some Basic Errors](#debugging-some-basic-errors)
-- [Virtual Environments and Dependency Tracking](#virtual-environments-and-dependency-tracking) 
+- [Virtual Environments and Dependency Tracking](#virtual-environments-and-dependency-tracking)
+- [Troubleshooting](#troubleshooting)
 - [General comments from the author](#general-comments-from-the-author)
 
 ## Summary
@@ -59,8 +60,10 @@ For the initial deployment, only one member of your team needs to follow the ste
 
 ## Running locally
 
-This is not formally a requirement of P01.  This is to help you test and develop your app locally; we recommend each member of the team to try this out. 
-
+- This is not formally a requirement of P01.  This is to help you test and develop your app locally; we recommend each member of the team to try this out. 
+- Ensure that you have Python version 3.10 or above installed on your machine (ideally in a virtual environment). Some of the libraries and code used in the template, as well as on the server end, are only compatible with Python versions 3.10 and above.
+- Make sure to pre-install MySQL Server and MySQL Workbench on your machine.
+  
 ### Step 1: Set up MySQL
 You will need to install MySQL. Here are two tutorials that could help you with the process:
 - For Windows users: https://blog.devart.com/how-to-install-mysql-on-windows-using-mysql-installer.html
@@ -143,13 +146,14 @@ Afterward, ensure to follow step 1 to prevent future tracking of virtual environ
     - Navigate to your project backend directory and run the command `pip freeze > requirements.txt`. This command will create or overwrite the `requirements.txt` file with a list of installed packages and their versions. 
     - Our server will use your project’s `requirements.txt` file to install all required packages, ensuring that your project runs seamlessly.
 
-## General comments from the author
+## Troubleshooting
 
-- Ensure that you have Python version 3.10 or above installed on your machine (ideally in a virtual environment). Some of the libraries and code used in the template, as well as on the server end, are only compatible with Python versions 3.10 and above.
-- Make sure to pre-install MySQL Server and MySQL Workbench on your machine.
+The attached google document includes a compilation of frequent issues encountered by students across various project stages, detailing whether these issues have been resolved and the solutions that were effective. We will continue to update this list with new information.
+
+Link: https://docs.google.com/document/d/1sF2zsubii_SYJLfZN02UB9FvtH1iLmi9xd-X4wbpbo8
+
+## General comments from the author
 - Since this project was made in the span of a few weeks, it is very likely things will break from time to time. If things break, you can send an email through the course email or post to ED first.
 - If you would like to see stuff added to the dashboard you can send an email through the course email and prefix the title with FEATURE REQUEST
-- If you REALLY want to go above and beyond, you can make a request for a special Docker template. These will likely be turned down unless there is an exceptional reason to do so, and you will have to be able to debug it yourself to ensure it works.
-- You can ask for the allocation of extra port numbers which will be approved or denied on a case-by-case basis.
 - You can also email regarding any questions relating to the service itself. If you think things can be improved or some better logic can be implemented for certain portions, or even just want to know more about the project then feel free to do so.
 
